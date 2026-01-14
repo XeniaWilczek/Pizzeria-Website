@@ -13,6 +13,7 @@ body {
   font-family: "Inter", sans-serif;
   --primary-color: #ff3030;
   --text-color: #ddd;
+  --background-color-images: rgba(0, 0, 0, 0.5);
 }
 
 .nav-bar {
@@ -26,14 +27,14 @@ body {
   font-size: 0.8 rem;
 }
 
-.navigation {
+.nav-item {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
 
-.navigation:hover {
+.nav-item:hover {
   color: var(--primary-color);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -45,7 +46,7 @@ body {
   justify-content: center;
   align-items: center;
   background-image: url("hero.jpg");
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--background-color-images);
   background-blend-mode: overlay;
   background-size: cover;
   background-position: center;
@@ -83,7 +84,7 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
-.opening-hours {
+.hero-button {
   padding: 1rem 2rem;
 }
 
@@ -100,10 +101,9 @@ body {
   display: grid;
   gap: 2rem;
   padding: 10px;
-  color: var(--text-color);
 }
 
-.text {
+.about-us-text {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -111,17 +111,18 @@ body {
   gap: 1rem;
 }
 
-.second-heading {
+.section-heading {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   margin: 2rem 0.1 rem 0;
   width: fit-content;
   border-bottom: 1px solid var(--primary-color);
+  margin-bottom: 0.5rem;
 }
 
 .about-us-text {
-  color: var(--text-color);
   font-size: 0.9rem;
+  color: var(--text-color);
 }
 
 .images {
@@ -154,6 +155,96 @@ body {
   height: auto;
 }
 
+.opening-hours-section {
+  background-image: url("info.jpg");
+  background-color: var(--background-color-images);
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4rem 0;
+}
+
+.opening-hours {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opening-hours-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 6rem;
+}
+
+.opening-hours-paragraph1 {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-width: 120px;
+  color: var(--text-color);
+}
+
+.opening-hours-paragraph2 {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  min-width: 120px;
+}
+
+.contact-content {
+  display: grid;
+  gap: 2rem;
+  padding: 10px;
+}
+
+.contact-image {
+  min-width: 50%;
+  max-width: 100%;
+  height: auto;
+  position: center;
+  margin: auto;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.contact-details-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+.contact-button {
+  background-color: transparent;
+  color: var(--primary-color);
+  text-decoration: none;
+  border: 1px solid var(--primary-color);
+  padding: 1rem 2rem;
+  width: fit-content;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+.contact-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  width: fit-content;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
 @media only screen and (min-width: 600px) {
   .main-heading {
     font-size: 4rem;
@@ -162,16 +253,19 @@ body {
   .subtitle {
     font-size: 1.5rem;
   }
-  .opening-hours,
-  .opening-hours:hover {
-    padding: 1.2rem 2.5rem;
-  }
+
   .nav-bar {
     gap: 2rem;
     font-size: 1rem;
   }
   .about-us-text {
     font-size: 1rem;
+  }
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 4rem;
   }
 }
 
@@ -187,7 +281,7 @@ body {
     align-items: center;
     margin-top: 6rem;
   }
-  .second-heading {
+  .section-heading {
     font-size: 2rem;
   }
 
@@ -200,10 +294,32 @@ body {
   .right-column-images {
     gap: 1rem;
   }
+
+  .opening-hours {
+    margin: 15 px 0;
+    padding: 10px 0;
+  }
+
+  .opening-hours-columns {
+    gap: 8rem;
+    margin: 1.5rem;
+  }
+
+  .opening-hours-paragraph1,
+  .opening-hours-paragraph2 {
+    font-size: 1.5rem;
+    gap: 1rem;
+  }
 }
 
 @media only screen and (min-width: 1400px) {
   .container {
     max-width: 1200px;
+  }
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    padding: 40px;
   }
 }
