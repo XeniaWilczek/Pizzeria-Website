@@ -52,7 +52,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("hero.jpg");
+  background-image: url("./images-subfolder/hero.jpg");
   background-color: var(--background-color-images);
   background-blend-mode: overlay;
   background-size: cover;
